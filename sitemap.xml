@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>http://localhost:4000/vector/news/20220224/</loc>
+<lastmod>2022-02-24T16:00:00+08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/vector/about/ground_truth/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/vector/about/sensor/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/vector/about/synchronization/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/vector/calibration/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/vector/competition/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/vector/contact/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/vector/download/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/vector/</loc>
+</url>
+</urlset>
