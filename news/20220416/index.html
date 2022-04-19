@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>VECtor Benchmark   | Synchronization</title>
+    <title>VECtor Benchmark   | 20220416</title>
     <meta name="author" content="VECtor Benchmark  " />
     <meta name="description" content="A Versatile Event-Centric Benchmark for Multi-Sensor SLAM.
 " />
@@ -18,8 +18,8 @@
     <!-- OpenGraph -->
     <meta property="og:site_name" content="VECtor Benchmark  " />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="VECtor Benchmark   | Synchronization" />
-    <meta property="og:url" content="http://localhost:4000/vector/about/synchronization/" />
+    <meta property="og:title" content="VECtor Benchmark   | 20220416" />
+    <meta property="og:url" content="http://localhost:4000/vector/news/20220416/" />
     <meta property="og:description" content="A Versatile Event-Centric Benchmark for Multi-Sensor SLAM.
 " />
     
@@ -27,7 +27,7 @@
 
     <!-- Twitter card -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Synchronization" />
+    <meta name="twitter:title" content="20220416" />
     <meta name="twitter:description" content="A Versatile Event-Centric Benchmark for Multi-Sensor SLAM.
 " />
     
@@ -41,11 +41,11 @@
           "@type": "Person",
           "name": "VECtor Benchmark  "
         },
-        "url": "http://localhost:4000/vector/about/synchronization/",
+        "url": "http://localhost:4000/vector/news/20220416/",
         "@type": "WebSite",
         "description": "A Versatile Event-Centric Benchmark for Multi-Sensor SLAM.
 ",
-        "headline": "Synchronization",
+        "headline": "20220416",
         "sameAs": ["https://github.com/MobilePerceptionLab", "https://star-datasets.github.io/", "https://mpl.sist.shanghaitech.edu.cn/"],
         "name": "VECtor Benchmark  ",
         "@context": "https://schema.org"
@@ -70,7 +70,7 @@
     <link rel="shortcut icon" href="/vector/assets/img/mpl_icon.png"/>
     
     <link rel="stylesheet" href="/vector/assets/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/vector/about/synchronization/">
+    <link rel="canonical" href="http://localhost:4000/vector/news/20220416/">
     
     <!-- Dark Mode -->
     
@@ -139,47 +139,25 @@
 
     <!-- Content -->
     <div class="container mt-5">
-      <!-- page.html -->
-        <div class="post">
+      <!-- _layouts/post.html -->
 
-          <header class="post-header">
-            <h1 class="post-title">Synchronization</h1>
-            <p class="post-description"></p>
-          </header>
+<div class="post">
 
-          <article>
-            <p><br></p>
+  <header class="post-header">
+    <h1 class="post-title">20220416</h1>
+    <p class="post-meta">April 16, 2022</p>
+    <p class="post-tags">
+      <a href="/vector/blog/2022"> <i class="fas fa-calendar fa-sm"></i> 2022 </a>
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
+    </p>
+  </header>
 
-  <picture>
-    <source media="(max-width: 480px)" srcset="/vector/assets/img/synchronization-480.webp"></source>
-    <source media="(max-width: 800px)" srcset="/vector/assets/img/synchronization-800.webp"></source>
-    <source media="(max-width: 1400px)" srcset="/vector/assets/img/synchronization-1400.webp"></source>
-    <!-- Fallback to the original file -->
-    <img class="img-fluid rounded z-depth-1" src="/vector/assets/img/synchronization.png" title="synchronization">
+  <article class="post-content">
+    <p><a href="https://github.com/mgaoling/mpl_dataset_toolbox" target="_blank" rel="noopener noreferrer">Dataset toolbox</a> is now available.</p>
 
-  </picture>
+  </article>
 
-</figure>
-
-    </div>
 </div>
-<div class="caption" style="text-align:left;">
-An MCU produces different types of square wave signals. The different signals are marked with different colors, the period is indicated below the signal, and the pulse width above. The vertical lines on the left and right (purple) indicate the temporal location of the start and ending signals communicated to the MCU. Note that only one signal is indicated for each stereo pair.
-</div>
-
-<p><br></p>
-
-<p>All sensors including the MoCap system are synchronized at the hardware level and triggered by a micro-controller unit (MCU). We use an <a href="https://www.st.com/en/microcontrollers-microprocessors/stm32f407-417.html" target="_blank" rel="noopener noreferrer">STM32F407</a> and rely on the onboard external oscillator as a main clock to produce the trigger signals.</p>
-
-<p>To suit the needs of the different types of sensors, the MCU outputs a variety of signals that adhere to the different synchronization interface specifications. After the MCU receives a start trigger from the user, it forwards a sequence of 200 pulses to the right event camera (master). This signal is used to calibrate the internal clock of the event camera in 5ms intervals, and synchronization within the pair is achieved via the internal firmware and a daisy chain connection. The same signal is also forwarded to the IMU. For the regular cameras, the MCU transmits a 30Hz signal with a 10ms pulse width to control the exposure intervals’ beginning and end. The RGB-D sensor also receives a 30Hz signal but with a 1ms pulse width as required. The LiDAR’s internal clock is synchronized with the MCU’s through a mimicked analog GPS NMEA time signal, and individual scan capture is triggered by an additional 1Hz signal. The MoCap system receives a constant 120Hz signal from the MCU irrespectively of whether or not data recording is in progress. An independent high gate signal is used to mark the start and the end of an entire sequence. When the MCU receives an end trigger from the user, all aforementioned signals except for the constant MoCap signal and the GPS NMEA signal are terminated.</p>
-
-          </article>
-
-        </div>
 
     </div>
 

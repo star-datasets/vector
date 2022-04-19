@@ -103,13 +103,6 @@
                 <a class="nav-link" href="/vector/">Home</a>
               </li>
 
-              <!-- Remove Blog || Publications || Projects button on the header -->
-              <!--  -->
-              <!-- Blog -->
-              <!-- <li class="nav-item ">
-                <a class="nav-link" href="/vector/blog/">blog</a>
-              </li> --> 
-
               <!-- Other pages -->
                 <li class="nav-item dropdown ">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
@@ -135,7 +128,7 @@
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="https://github.com/mgaoling/mpl_calibration_toolbox/issues" target="_blank" rel="noopener noreferrer">Calibration Issue</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="mailto:gaoling@shanghaitech.edu.cn">Dataset Issue</a>
+                    <a class="dropdown-item" href="https://github.com/mgaoling/mpl_dataset_toolbox/issues" target="_blank" rel="noopener noreferrer">Dataset Issue</a>
                   </div>
                 </li>
             </ul>
@@ -157,7 +150,26 @@
           <article>
             <p><br></p>
 
-<h4>ROS bag Data Format</h4>
+<h4><a href="https://github.com/mgaoling/mpl_dataset_toolbox" target="_blank" rel="noopener noreferrer">MPL Dataset Toolbox</a></h4>
+
+<p><br></p>
+
+<p>We provide an additional, easy-to-use toolbox to execute the following functions:</p>
+
+<ul>
+  <li>
+<strong>Event Visualizer</strong>: convert raw event stream into accumulated event frames.</li>
+  <li>
+<strong>Data Validator</strong>: validate the downloaded rosbag or the merged rosbag for its completeness.</li>
+  <li>
+<strong>Bag Merger</strong>: merge multiple, single-topic rosbags chronologically into one complete rosbag.</li>
+  <li>
+<strong>Bag Splitter</strong>: split one multi-topic rosbag into a few compressed, single-topic rosbags.</li>
+</ul>
+
+<p><br></p>
+
+<h4>ROS Bag Data Format</h4>
 
 <p><br></p>
 
@@ -167,11 +179,11 @@
   <li>
 <strong>/prophesee/right/events</strong> (<a href="https://github.com/prophesee-ai/prophesee_ros_wrapper/blob/master/prophesee_event_msgs/msg/EventArray.msg" target="_blank" rel="noopener noreferrer">prophesee_event_msgs/EventArray</a>): Events from the right event camera.</li>
   <li>
-<strong>/stereo/left/image_mono</strong> (<a href="http://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/Image.html" target="_blank" rel="noopener noreferrer">sensor_msgs/Image</a>): Grayscale images from the left regular camera.</li>
+<strong>/camera/left/image_mono</strong> (<a href="http://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/Image.html" target="_blank" rel="noopener noreferrer">sensor_msgs/Image</a>): Grayscale images from the left regular camera.</li>
   <li>
-<strong>/stereo/right/image_mono</strong> (<a href="http://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/Image.html" target="_blank" rel="noopener noreferrer">sensor_msgs/Image</a>): Grayscale images from the right regular camera.</li>
+<strong>/camera/right/image_mono</strong> (<a href="http://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/Image.html" target="_blank" rel="noopener noreferrer">sensor_msgs/Image</a>): Grayscale images from the right regular camera.</li>
   <li>
-<strong>/kinect/depth_image</strong> (<a href="http://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/Image.html" target="_blank" rel="noopener noreferrer">sensor_msgs/Image</a>): Depth images from the RGB-D camera.</li>
+<strong>/kinect/depth_image</strong> (<a href="http://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/Image.html" target="_blank" rel="noopener noreferrer">sensor_msgs/Image</a>): Depth images from the RGB-D sensor.</li>
   <li>
 <strong>/ouster/point_cloud</strong> (<a href="http://docs.ros.org/en/lunar/api/sensor_msgs/html/msg/PointCloud2.html" target="_blank" rel="noopener noreferrer">sensor_msgs/PointCloud2</a>): Point clouds from the LiDAR.</li>
   <li>
@@ -184,11 +196,11 @@
 
 <p><br></p>
 
-<h4>Data Sequences and Toolbox</h4>
+<h4>Data Sequences</h4>
 
 <p><br></p>
 
-<p>Data sequences and toolbox will be released in due time.</p>
+<p>More data sequences will be released in due time.</p>
 
           </article>
 
@@ -200,9 +212,6 @@
     <footer class="fixed-bottom">
       <div class="container mt-0" style="width:100%;text-align:center;">
         © 2022 Mobile Perception Lab, ShanghaiTech University, China. All rights reserved.
-
-        <!-- &copy; Copyright 2022 VECtor Benchmark  . All rights reserved.
- -->
       </div>
     </footer>
 

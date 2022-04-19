@@ -103,13 +103,6 @@
                 <a class="nav-link" href="/vector/">Home</a>
               </li>
 
-              <!-- Remove Blog || Publications || Projects button on the header -->
-              <!--  -->
-              <!-- Blog -->
-              <!-- <li class="nav-item ">
-                <a class="nav-link" href="/vector/blog/">blog</a>
-              </li> --> 
-
               <!-- Other pages -->
                 <li class="nav-item dropdown ">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
@@ -135,7 +128,7 @@
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="https://github.com/mgaoling/mpl_calibration_toolbox/issues" target="_blank" rel="noopener noreferrer">Calibration Issue</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="mailto:gaoling@shanghaitech.edu.cn">Dataset Issue</a>
+                    <a class="dropdown-item" href="https://github.com/mgaoling/mpl_dataset_toolbox/issues" target="_blank" rel="noopener noreferrer">Dataset Issue</a>
                   </div>
                 </li>
             </ul>
@@ -175,7 +168,7 @@
     </div>
 </div>
 <div class="caption" style="text-align:left;">
-Illustration of required calibration variables. Nodes: sensor type (yellow/void background color indicates need/no need for intrinsic calibration). Blue edges: joint extrinsic camera calibration. Cyan edges: Camera-IMU extrinsic calibration. Orange edges: Camera-MoCap hand-eye calibration. Red edges: Camera-LiDAR extrinsic calibration. The variables are calibrated in the listed order.
+Illustration of required calibration variables. Nodes: sensor type (yellow/void background color indicates need/no need for intrinsic calibration). Blue edges: joint camera extrinsic calibration. Cyan edges: Camera-IMU extrinsic calibration. Orange edges: Camera-MoCap hand-eye calibration. Red edges: Camera-LiDAR extrinsic calibration. The variables are calibrated in the listed order.
 </div>
 
 <p><br></p>
@@ -184,7 +177,7 @@ Illustration of required calibration variables. Nodes: sensor type (yellow/void 
 
 <p><br></p>
 
-<p>We provide an additional, easy-to-use toolbox to execute and reproduce all following calibration tasks with detailed instructions. Related data sequences and calibration results can be found in the following sections.</p>
+<p>We provide an additional, easy-to-use toolbox to execute and reproduce the calibration tasks with detailed instructions. Related data sequences and calibration results can be found in the following sections.</p>
 
 <p><br></p>
 
@@ -193,8 +186,6 @@ Illustration of required calibration variables. Nodes: sensor type (yellow/void 
 <p><br></p>
 
 <p>All camera intrinsics, including the focal lengths, the optical center, and the distortion parameters, are calibrated using the official <a href="http://wiki.ros.org/camera_calibration" target="_blank" rel="noopener noreferrer">ROS Camera Calibration toolbox</a> and by gently moving in front of a 9 x 6 checkerboard visualized on a computer screen. The choice of a virtual checkerboard enables display in either static or blinking mode. The latter is particularly useful for event camera calibration, as it produces accumulated event images with a sharp appearance of the checkerboard. Images that contain too much blur have been manually removed. Note that we take the factory calibration result for the RGB-D sensor (intrinsics of both color and depth camera as well as extrinsics between them).</p>
-
-<p>The IMU intrinsics (i.e. the statistical properties of the accelerometer and gyroscope signals, including bias random walk and noise densities) are calibrated using the <a href="https://github.com/ori-drs/allan_variance_ros" target="_blank" rel="noopener noreferrer">Allan Variance ROS toolbox</a> with a 5-hour-long IMU sequence by putting the sensor flat on the ground with no perturbation. The MoCap system is pre-calibrated before data recording.</p>
 
 <ul>
   <li>
@@ -215,14 +206,21 @@ Illustration of required calibration variables. Nodes: sensor type (yellow/void 
   <li>
 <strong>RGB-D Depth Camera Intrinsic</strong>: <a href="/vector/assets/yaml/rgbd_depth_camera_factory_intrinsic_results.yaml">factory results</a>
 </li>
+</ul>
+
+<p><br></p>
+
+<p>The IMU intrinsics (i.e. the statistical properties of the accelerometer and gyroscope signals, including bias random walk and noise densities) are calibrated using the <a href="https://github.com/ori-drs/allan_variance_ros" target="_blank" rel="noopener noreferrer">Allan Variance ROS toolbox</a> with a 5-hour-long IMU sequence by putting the sensor flat on the ground with no perturbation.</p>
+
+<ul>
   <li>
-<strong>IMU Intrinsic</strong>: <a href="https://drive.google.com/file/d/1AjPlXVeUWJTWQsogvMMj3rxYb4tk_dFO/view?usp=sharing" target="_blank" rel="noopener noreferrer">data</a>, <a href="/vector/assets/yaml/imu_intrinsic_results.yaml">results</a>
+<strong>IMU Intrinsic</strong>: <a href="/vector/assets/yaml/imu_intrinsic_config.yaml">config</a>, <a href="https://drive.google.com/file/d/1AjPlXVeUWJTWQsogvMMj3rxYb4tk_dFO/view?usp=sharing" target="_blank" rel="noopener noreferrer">data</a>, <a href="/vector/assets/yaml/imu_intrinsic_results.yaml">results</a>
 </li>
 </ul>
 
 <p><br></p>
 
-<h4>Joint extrinsic camera calibration</h4>
+<h4>Joint Camera Extrinsic Calibration</h4>
 
 <p><br></p>
 
@@ -245,7 +243,7 @@ Illustration of required calibration variables. Nodes: sensor type (yellow/void 
 
 <p><br></p>
 
-<h4>Camera-IMU extrinsic calibration</h4>
+<h4>Camera-IMU Extrinsic Calibration</h4>
 
 <p><br></p>
 
@@ -256,14 +254,14 @@ Illustration of required calibration variables. Nodes: sensor type (yellow/void 
 <strong>Camera-IMU Extrinsics (CAD model)</strong>: <a href="/vector/assets/yaml/camera_imu_extrinsic_cad_readings.yaml">CAD readings</a>
 </li>
   <li>
-<strong>Camera-IMU Extrinsics (small-scale)</strong>: <a href="/vector/assets/zip/camera_imu_extrinsic_config.zip">config</a>, <a href="https://drive.google.com/file/d/1Ti1ouI5ueXrZDlVY06i9eB6IOJM19gyQ/view?usp=sharing" target="_blank" rel="noopener noreferrer">data1</a>, <a href="/vector/assets/yaml/small_scale_camera_imu_extrinsic_results1.yaml">results1</a> (<a href="https://drive.google.com/file/d/1NBK76ktz_EH1QJr8nxPFggOfMfiAkTuY/view?usp=sharing" target="_blank" rel="noopener noreferrer">data2</a>, <a href="https://drive.google.com/file/d/1DfDNQhInhB43E0_z7wwZa7wMUwjrmk5R/view?usp=sharing" target="_blank" rel="noopener noreferrer">data3</a>)</li>
+<strong>Camera-IMU Extrinsics (small-scale)</strong>: <a href="/vector/assets/zip/small_scale_camera_imu_extrinsic_config.zip">config</a>, <a href="https://drive.google.com/file/d/1Ti1ouI5ueXrZDlVY06i9eB6IOJM19gyQ/view?usp=sharing" target="_blank" rel="noopener noreferrer">data1</a>, <a href="/vector/assets/yaml/small_scale_camera_imu_extrinsic_results1.yaml">results1</a> (<a href="https://drive.google.com/file/d/1NBK76ktz_EH1QJr8nxPFggOfMfiAkTuY/view?usp=sharing" target="_blank" rel="noopener noreferrer">data2</a>, <a href="https://drive.google.com/file/d/1DfDNQhInhB43E0_z7wwZa7wMUwjrmk5R/view?usp=sharing" target="_blank" rel="noopener noreferrer">data3</a>)</li>
   <li>
-<strong>Camera-IMU Extrinsics (large-scale)</strong>: <a href="/vector/assets/zip/camera_imu_extrinsic_config.zip">config</a>, <a href="https://drive.google.com/file/d/1f3moxxfkbIW5rFLeSoMYZxbkUOzbbaiu/view?usp=sharing" target="_blank" rel="noopener noreferrer">data1</a>, <a href="/vector/assets/yaml/large_scale_camera_imu_extrinsic_results1.yaml">results1</a> (<a href="https://drive.google.com/file/d/1Vu22b5_pdhvW58hE-ta2CYVgoeXCF4pk/view?usp=sharing" target="_blank" rel="noopener noreferrer">data2</a>, <a href="https://drive.google.com/file/d/1NLgP83NIudT_RMyfj1Iufaimr6PXGWBe/view?usp=sharing" target="_blank" rel="noopener noreferrer">data3</a>)</li>
+<strong>Camera-IMU Extrinsics (large-scale)</strong>: <a href="/vector/assets/zip/large_scale_camera_imu_extrinsic_config.zip">config</a>, <a href="https://drive.google.com/file/d/1f3moxxfkbIW5rFLeSoMYZxbkUOzbbaiu/view?usp=sharing" target="_blank" rel="noopener noreferrer">data1</a>, <a href="/vector/assets/yaml/large_scale_camera_imu_extrinsic_results1.yaml">results1</a> (<a href="https://drive.google.com/file/d/1Vu22b5_pdhvW58hE-ta2CYVgoeXCF4pk/view?usp=sharing" target="_blank" rel="noopener noreferrer">data2</a>, <a href="https://drive.google.com/file/d/1NLgP83NIudT_RMyfj1Iufaimr6PXGWBe/view?usp=sharing" target="_blank" rel="noopener noreferrer">data3</a>)</li>
 </ul>
 
 <p><br></p>
 
-<h4>Camera-MoCap hand-eye calibration</h4>
+<h4>Camera-MoCap Hand-eye Calibration</h4>
 
 <p><br></p>
 
@@ -276,7 +274,7 @@ Illustration of required calibration variables. Nodes: sensor type (yellow/void 
 
 <p><br></p>
 
-<h4>Camera-LiDAR extrinsic calibration</h4>
+<h4>Camera-LiDAR Extrinsic Calibration</h4>
 
 <p><br></p>
 
@@ -301,9 +299,6 @@ Illustration of required calibration variables. Nodes: sensor type (yellow/void 
     <footer class="fixed-bottom">
       <div class="container mt-0" style="width:100%;text-align:center;">
         © 2022 Mobile Perception Lab, ShanghaiTech University, China. All rights reserved.
-
-        <!-- &copy; Copyright 2022 VECtor Benchmark  . All rights reserved.
- -->
       </div>
     </footer>
 
