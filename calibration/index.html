@@ -46,7 +46,7 @@
         "description": "A Versatile Event-Centric Benchmark for Multi-Sensor SLAM.
 ",
         "headline": "Calibration",
-        "sameAs": ["https://github.com/MobilePerceptionLab", "https://star-datasets.github.io/", "https://mpl.sist.shanghaitech.edu.cn/"],
+        "sameAs": ["https://star-datasets.github.io/", "https://mpl.sist.shanghaitech.edu.cn/"],
         "name": "VECtor Benchmark  ",
         "@context": "https://schema.org"
       }
@@ -177,7 +177,7 @@ Illustration of required calibration variables. Nodes: sensor type (yellow/void 
 
 <p><br></p>
 
-<p>We provide an additional, easy-to-use toolbox to execute and reproduce the calibration tasks with detailed instructions. Related data sequences and calibration results can be found in the following sections.</p>
+<p>We provide an additional, easy-to-use toolbox to execute and reproduce the calibration tasks with detailed instructions. Related configuration files, data sequences, and calibration results can be found below.</p>
 
 <p><br></p>
 
@@ -185,36 +185,45 @@ Illustration of required calibration variables. Nodes: sensor type (yellow/void 
 
 <p><br></p>
 
-<p>All camera intrinsics, including the focal lengths, the optical center, and the distortion parameters, are calibrated using the official <a href="http://wiki.ros.org/camera_calibration" target="_blank" rel="noopener noreferrer">ROS Camera Calibration toolbox</a> and by gently moving in front of a 9 x 6 checkerboard visualized on a computer screen. The choice of a virtual checkerboard enables display in either static or blinking mode. The latter is particularly useful for event camera calibration, as it produces accumulated event images with a sharp appearance of the checkerboard. Images that contain too much blur have been manually removed. Note that we take the factory calibration result for the RGB-D sensor (intrinsics of both color and depth camera as well as extrinsics between them).</p>
+<p>All camera intrinsics, including the focal lengths, the optical center, and the distortion parameters, are calibrated using the official <a href="http://wiki.ros.org/camera_calibration" target="_blank" rel="noopener noreferrer">ROS Camera Calibration toolbox</a> and by gently moving in front of a 9 x 6 checkerboard visualized on a computer screen. The choice of a virtual checkerboard enables display in either static or blinking mode. The latter is particularly useful for event camera calibration, as it produces accumulated event images with a sharp appearance of the checkerboard. Images that contain too much blur have been manually removed.</p>
 
 <ul>
   <li>
-<strong>Left Event Camera Intrinsic</strong>: <a href="/vector/assets/zip/left_event_camera_intrinsic_data.zip">data</a>, <a href="/vector/assets/yaml/left_event_camera_intrinsic_results.yaml">results</a>
+<strong>Left Event Camera Intrinsics</strong>: <a href="/vector/assets/zip/left_event_camera_intrinsic_data.zip">data</a>, <a href="/vector/assets/yaml/left_event_camera_intrinsic_results.yaml">results</a>
 </li>
   <li>
-<strong>Right Event Camera Intrinsic</strong>: <a href="/vector/assets/zip/right_event_camera_intrinsic_data.zip">data</a>, <a href="/vector/assets/yaml/right_event_camera_intrinsic_results.yaml">results</a>
+<strong>Right Event Camera Intrinsics</strong>: <a href="/vector/assets/zip/right_event_camera_intrinsic_data.zip">data</a>, <a href="/vector/assets/yaml/right_event_camera_intrinsic_results.yaml">results</a>
 </li>
   <li>
-<strong>Left Regular Camera Intrinsic</strong>: <a href="/vector/assets/zip/left_regular_camera_intrinsic_data.zip">data</a>, <a href="/vector/assets/yaml/left_regular_camera_intrinsic_results.yaml">results</a>
+<strong>Left Regular Camera Intrinsics</strong>: <a href="/vector/assets/zip/left_regular_camera_intrinsic_data.zip">data</a>, <a href="/vector/assets/yaml/left_regular_camera_intrinsic_results.yaml">results</a>
 </li>
   <li>
-<strong>Right Regular Camera Intrinsic</strong>: <a href="/vector/assets/zip/right_regular_camera_intrinsic_data.zip">data</a>, <a href="/vector/assets/yaml/right_regular_camera_intrinsic_results.yaml">results</a>
-</li>
-  <li>
-<strong>RGB-D Color Camera Intrinsic</strong>: <a href="/vector/assets/yaml/rgbd_color_camera_factory_intrinsic_results.yaml">factory results</a>
-</li>
-  <li>
-<strong>RGB-D Depth Camera Intrinsic</strong>: <a href="/vector/assets/yaml/rgbd_depth_camera_factory_intrinsic_results.yaml">factory results</a>
+<strong>Right Regular Camera Intrinsics</strong>: <a href="/vector/assets/zip/right_regular_camera_intrinsic_data.zip">data</a>, <a href="/vector/assets/yaml/right_regular_camera_intrinsic_results.yaml">results</a>
 </li>
 </ul>
 
-<p><br></p>
+<p>Note that we take the factory calibration result for the RGB-D sensor (intrinsics of both color and depth camera as well as extrinsics between them).</p>
+
+<ul>
+  <li>
+<strong>RGB-D Color Camera Intrinsics</strong>: <a href="/vector/assets/yaml/rgbd_color_camera_factory_intrinsic_results.yaml">factory results</a>
+</li>
+  <li>
+<strong>RGB-D Depth Camera Intrinsics</strong>: <a href="/vector/assets/yaml/rgbd_depth_camera_factory_intrinsic_results.yaml">factory results</a>
+</li>
+  <li>
+<strong>RGB-D Camera Extrinsics</strong>: <a href="/vector/assets/yaml/rgbd_camera_factory_extrinsic_results.yaml">factory results</a>
+</li>
+  <li>
+<strong>[NEW 2022-05] RGB-D Camera Extrinsics</strong>: <a href="/vector/assets/zip/rgbd_camera_extrinsic_config.zip">config</a>, <a href="/vector/assets/zip/rgbd_camera_extrinsic_data.zip">data</a>, <a href="/vector/assets/yaml/rgbd_camera_calibrated_extrinsic_results.yaml">results</a>
+</li>
+</ul>
 
 <p>The IMU intrinsics (i.e. the statistical properties of the accelerometer and gyroscope signals, including bias random walk and noise densities) are calibrated using the <a href="https://github.com/ori-drs/allan_variance_ros" target="_blank" rel="noopener noreferrer">Allan Variance ROS toolbox</a> with a 5-hour-long IMU sequence by putting the sensor flat on the ground with no perturbation.</p>
 
 <ul>
   <li>
-<strong>IMU Intrinsic</strong>: <a href="/vector/assets/yaml/imu_intrinsic_config.yaml">config</a>, <a href="https://drive.google.com/file/d/1AjPlXVeUWJTWQsogvMMj3rxYb4tk_dFO/view?usp=sharing" target="_blank" rel="noopener noreferrer">data</a>, <a href="/vector/assets/yaml/imu_intrinsic_results.yaml">results</a>
+<strong>IMU Intrinsics</strong>: <a href="/vector/assets/yaml/imu_intrinsic_config.yaml">config</a>, <a href="https://drive.google.com/file/d/1AjPlXVeUWJTWQsogvMMj3rxYb4tk_dFO/view?usp=sharing" target="_blank" rel="noopener noreferrer">data</a>, <a href="/vector/assets/yaml/imu_intrinsic_results.yaml">results</a>
 </li>
 </ul>
 
@@ -227,9 +236,6 @@ Illustration of required calibration variables. Nodes: sensor type (yellow/void 
 <p>In order to determine the extrinsics of the multi-camera system, we point the sensor setup towards the screen and record both static and blinking checkerboard patterns with known size. For each observation, the relative position between screen and sensors is kept still by putting the sensor suite steadily on a tripod. The board is maintained within the field of view of all cameras. Note that here we use the color camera on the RGB-D sensor to jointly calibrate its extrinsics. The extrinsics of the depth camera are obtained by the known internal parameters of the depth camera, and the rolling shutter effect is safely ignored as no motion between cameras and pattern is involved. The extrinsics are calculated by detecting corner points on the checkerboard pattern and applying PnP to the resulting 2D-3D correspondences. The result is refined by <a href="http://ceres-solver.org/" target="_blank" rel="noopener noreferrer">Ceres Solver</a>-based reprojection error minimization. We finally validate the estimated extrinsic parameters by analyzing the quality of depth map reprojections and by comparing the result against the measurements from the CAD model.</p>
 
 <ul>
-  <li>
-<strong>RGB-D Extrinsic (small-scale)</strong>: <a href="/vector/assets/yaml/rgbd_factory_extrinsic_results.yaml">factory results</a>
-</li>
   <li>
 <strong>Joint Camera Extrinsics (CAD model)</strong>: <a href="/vector/assets/yaml/joint_camera_extrinsic_cad_readings.yaml">CAD readings</a>
 </li>
@@ -254,9 +260,9 @@ Illustration of required calibration variables. Nodes: sensor type (yellow/void 
 <strong>Camera-IMU Extrinsics (CAD model)</strong>: <a href="/vector/assets/yaml/camera_imu_extrinsic_cad_readings.yaml">CAD readings</a>
 </li>
   <li>
-<strong>Camera-IMU Extrinsics (small-scale)</strong>: <a href="/vector/assets/zip/small_scale_camera_imu_extrinsic_config.zip">config</a>, <a href="https://drive.google.com/file/d/1Ti1ouI5ueXrZDlVY06i9eB6IOJM19gyQ/view?usp=sharing" target="_blank" rel="noopener noreferrer">data1</a>, <a href="/vector/assets/yaml/small_scale_camera_imu_extrinsic_results1.yaml">results1</a> (<a href="https://drive.google.com/file/d/1NBK76ktz_EH1QJr8nxPFggOfMfiAkTuY/view?usp=sharing" target="_blank" rel="noopener noreferrer">data2</a>, <a href="https://drive.google.com/file/d/1DfDNQhInhB43E0_z7wwZa7wMUwjrmk5R/view?usp=sharing" target="_blank" rel="noopener noreferrer">data3</a>)</li>
+<strong>Camera-IMU Extrinsics (small-scale)</strong>: <a href="/vector/assets/zip/small_scale_camera_imu_extrinsic_config.zip">config</a>, <a href="https://drive.google.com/file/d/1465i-dS_yz94IoTu4jb6u5bM_56zWMWx/view?usp=sharing" target="_blank" rel="noopener noreferrer">data1</a>, <a href="/vector/assets/yaml/small_scale_camera_imu_extrinsic_results1.yaml">results1</a> (<a href="https://drive.google.com/file/d/1miffwx2w7gpSOsTo3N03Yxxn6NiP6YjK/view?usp=sharing" target="_blank" rel="noopener noreferrer">data2</a>, <a href="https://drive.google.com/file/d/18EjPSf47BtPZ9OZ25fmNxFw--Du-Pf76/view?usp=sharing" target="_blank" rel="noopener noreferrer">data3</a>)</li>
   <li>
-<strong>Camera-IMU Extrinsics (large-scale)</strong>: <a href="/vector/assets/zip/large_scale_camera_imu_extrinsic_config.zip">config</a>, <a href="https://drive.google.com/file/d/1f3moxxfkbIW5rFLeSoMYZxbkUOzbbaiu/view?usp=sharing" target="_blank" rel="noopener noreferrer">data1</a>, <a href="/vector/assets/yaml/large_scale_camera_imu_extrinsic_results1.yaml">results1</a> (<a href="https://drive.google.com/file/d/1Vu22b5_pdhvW58hE-ta2CYVgoeXCF4pk/view?usp=sharing" target="_blank" rel="noopener noreferrer">data2</a>, <a href="https://drive.google.com/file/d/1NLgP83NIudT_RMyfj1Iufaimr6PXGWBe/view?usp=sharing" target="_blank" rel="noopener noreferrer">data3</a>)</li>
+<strong>Camera-IMU Extrinsics (large-scale)</strong>: <a href="/vector/assets/zip/large_scale_camera_imu_extrinsic_config.zip">config</a>, <a href="https://drive.google.com/file/d/1_pJDVTo7tE51jFqX7Grcy-MlJe_N9xbk/view?usp=sharing" target="_blank" rel="noopener noreferrer">data1</a>, <a href="/vector/assets/yaml/large_scale_camera_imu_extrinsic_results1.yaml">results1</a> (<a href="https://drive.google.com/file/d/1-bf9dDtVB9-P9tn7uJOLBFVs0ofsBE7D/view?usp=sharing" target="_blank" rel="noopener noreferrer">data2</a>, <a href="https://drive.google.com/file/d/12A24vNKimllHuWoKwbQRgrQLp50l6_wI/view?usp=sharing" target="_blank" rel="noopener noreferrer">data3</a>)</li>
 </ul>
 
 <p><br></p>
@@ -269,7 +275,7 @@ Illustration of required calibration variables. Nodes: sensor type (yellow/void 
 
 <ul>
   <li>
-<strong>Camera-MoCap Extrinsics (small-scale)</strong>: <a href="https://drive.google.com/file/d/1nmgroHW3ET4A_p2qXO2kI-brRvCw9qN5/view?usp=sharing" target="_blank" rel="noopener noreferrer">data1</a>, <a href="/vector/assets/yaml/camera_mocap_extrinsic_results1.yaml">results1</a> (<a href="https://drive.google.com/file/d/1ANOwH60tX9d22woevritwKS1lMjxPEmp/view?usp=sharing" target="_blank" rel="noopener noreferrer">data2</a>, <a href="https://drive.google.com/file/d/1DKeDc7nlSCI2qea8GHMJEHvPQroCEs6X/view?usp=sharing" target="_blank" rel="noopener noreferrer">data3</a>)</li>
+<strong>Camera-MoCap Extrinsics (small-scale)</strong>: <a href="https://drive.google.com/file/d/1_MYhj0WYVYP4NOQ7HaPylRkde6ObnYTx/view?usp=sharing" target="_blank" rel="noopener noreferrer">data1</a>, <a href="/vector/assets/yaml/camera_mocap_extrinsic_results1.yaml">results1</a> (<a href="https://drive.google.com/file/d/1kv3m8oarr_j7Z3MyJV-kDJnh1f8XHQnF/view?usp=sharing" target="_blank" rel="noopener noreferrer">data2</a>, <a href="https://drive.google.com/file/d/1YWficCZuA-3dNgwfnCo902tsRmwr73J6/view?usp=sharing" target="_blank" rel="noopener noreferrer">data3</a>)</li>
 </ul>
 
 <p><br></p>

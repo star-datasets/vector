@@ -10,7 +10,7 @@ cam0: # left_regular_camera
   distortion_model: radtan
   intrinsics: [886.191073, 886.591633, 610.578911, 514.59271]
   resolution: [1224, 1024]
-  rostopic: /stereo/left/image_mono
+  rostopic: /camera/left/image_mono
   timeshift_cam_imu: 0.008468256349302889
 cam1: # right_regular_camera
   T_cam_imu: # transformation from IMU to right regular camera
@@ -28,5 +28,5 @@ cam1: # right_regular_camera
   distortion_model: radtan
   intrinsics: [887.804282, 888.04815, 616.177573, 514.712952]
   resolution: [1224, 1024]
-  rostopic: /stereo/right/image_mono
+  rostopic: /camera/right/image_mono
   timeshift_cam_imu: 0.008392591842193153
