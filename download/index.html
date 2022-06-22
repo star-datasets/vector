@@ -154,7 +154,7 @@
 
 <p><br></p>
 
-<p>We provide an additional, easy-to-use toolbox to execute the following functions:</p>
+<p>Since the data sequences are provided in individual rosbag files given their large size, we provide an additional, easy-to-use toolbox to guide this downloading process. The most used functions are listed below:</p>
 
 <ul>
   <li>
@@ -164,9 +164,7 @@
   <li>
 <strong>Bag Merger</strong>: merge multiple, single-topic rosbags chronologically into one complete rosbag.</li>
   <li>
-<strong>Bag Splitter</strong>: split one multi-topic rosbag into a few compressed, single-topic rosbags.</li>
-  <li>
-<strong>[NEW 2022-05] <a href="https://github.com/greatoyster/k4a_projector" target="_blank" rel="noopener noreferrer">k4a Depth Reprojector</a></strong>: reproject depth readings into other sensor frames.</li>
+<strong>[NEW 2022-05] <a href="https://github.com/greatoyster/k4a_projector" target="_blank" rel="noopener noreferrer">k4a Projector</a></strong>: reproject depth readings into other sensor frames.</li>
 </ul>
 
 <p><br></p>
@@ -215,6 +213,17 @@
 
 <p><br></p>
 
+<h4>Disclaimer on the Depth Stream</h4>
+
+<p><br></p>
+
+<ul>
+  <li>The unit of the depth intensity is in millimeters from the origin of the camera.</li>
+  <li>Dropped frames are to be expected, owing to the singularity of the depth calculation in the k4a driver. We have deliberately left a blank on the depth stream to maintain the overall correctness.</li>
+</ul>
+
+<p><br></p>
+
 <h4>Small-scale Data Sequences</h4>
 
 <p><br></p>
@@ -224,9 +233,564 @@
         <figure>
 
   <picture>
-    <source media="(max-width: 480px)" srcset="/vector/assets/gif/sofa_normal1.synced.left_event.gif-480.webp"></source>
-    <source media="(max-width: 800px)" srcset="/vector/assets/gif/sofa_normal1.synced.left_event.gif-800.webp"></source>
-    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/sofa_normal1.synced.left_event.gif-1400.webp"></source>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/board_slow1.synced.left_event.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/board_slow1.synced.left_event.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/board_slow1.synced.left_event.gif-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/board_slow1.synced.left_event.gif" title="board_slow1.synced.left_event">
+
+  </picture>
+
+</figure>
+
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/board_slow1.synced.left_camera.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/board_slow1.synced.left_camera.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/board_slow1.synced.left_camera.gif-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/board_slow1.synced.left_camera.gif" title="board_slow1.synced.left_camera">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<h5>board-slow</h5>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>left event</strong>:   <a href="https://drive.google.com/file/d/1Iiwrr3X0dJVxESLKS6gSmNdtNxu8goaY/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (159M)</a>   |   <a href="https://drive.google.com/file/d/1hPg-iAA0XEns_Fi31Y5j2xxoXN2aQkWw/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (112M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>right event</strong>:   <a href="https://drive.google.com/file/d/1wl7uaK5KpMFHrVH2bNxwDvD0YrKTanMo/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (177M)</a>   |   <a href="https://drive.google.com/file/d/1-hU9PuONGZRGXrTE3Cz35k1AKyT6SicQ/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (124M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>left camera</strong>:   <a href="https://drive.google.com/file/d/1g6nSbvUVnPq5E4cd-rV-pbjqFW9iRYil/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (420M)</a>   |   <a href="https://drive.google.com/file/d/1r43G_9iipCor0UW5sQlig9YXiKS2-zDP/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (435M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>right camera</strong>:   <a href="https://drive.google.com/file/d/13qvCRBhw3OMrzGAb6cxF2ohANuSkExI8/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (410M)</a>   |   <a href="https://drive.google.com/file/d/1nhEYRNnV0b_eHup65pwR3Mq_CPhsopVF/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (425M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>depth</strong>:   <a href="https://drive.google.com/file/d/123J-ZGyFPFhP775jqjghTRjss48Y5Yfq/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (61M)</a>   |   <a href="https://drive.google.com/file/d/1JHIAIEZVlOBW059GvRj3SfKPoA6etuuK/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (79M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>imu</strong>:   <a href="https://drive.google.com/file/d/1r5sRMHzn3LkGEy71MBT13jMIPtHLRo_V/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1M)</a>   |   <a href="https://drive.google.com/file/d/1M3wxHefzJx5AMv6Ux_X6HgffhWXvbfMm/view?usp=sharing" target="_blank" rel="noopener noreferrer">txt (1M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>ground truth</strong>:   <a href="https://drive.google.com/file/d/10Z8E_MH4PoQIZnTAwXQXto0ErFCVmi8b/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1M)</a>   |   <a href="https://drive.google.com/file/d/1D9aKPL2s2X565F2WAbCflNvwH-lqdCaO/view?usp=sharing" target="_blank" rel="noopener noreferrer">txt (1M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>scene image</strong>:   <a href="/vector/assets/img/board.jpg">jpg (2M)</a>
+</li>
+    </div>
+</div>
+
+<p><br></p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/corner_slow1.synced.left_event.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/corner_slow1.synced.left_event.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/corner_slow1.synced.left_event.gif-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/corner_slow1.synced.left_event.gif" title="corner_slow1.synced.left_event">
+
+  </picture>
+
+</figure>
+
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/corner_slow1.synced.left_camera.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/corner_slow1.synced.left_camera.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/corner_slow1.synced.left_camera.gif-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/corner_slow1.synced.left_camera.gif" title="corner_slow1.synced.left_camera">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<h5>corner-slow</h5>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>left event</strong>:   <a href="https://drive.google.com/file/d/1fUAyVxeUgEVMo4MVB-LwUXdEzCNGM2Zs/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (143M)</a>   |   <a href="https://drive.google.com/file/d/10ths5FsSKi2zDKOZ3o2ZoYOPbW2Lhcq5/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (104M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>right event</strong>:   <a href="https://drive.google.com/file/d/1r8Sd_JBA_suWFaMHG01MojotNDEI4TYd/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (152M)</a>   |   <a href="https://drive.google.com/file/d/14DMFwaVD6bouUoTIzQ9ZqCpNxcXfk07X/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (114M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>left camera</strong>:   <a href="https://drive.google.com/file/d/1z9BQYIyCnPJPz6lRX6mK09gHvRCPRKhC/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (614M)</a>   |   <a href="https://drive.google.com/file/d/1fNLX1MZseUWt4AZj20POJTuHhFwzOEXV/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (583M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>right camera</strong>:   <a href="https://drive.google.com/file/d/16agDKwCub6IYBmQbmOSuej8Wsqmmo6-P/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (595M)</a>   |   <a href="https://drive.google.com/file/d/1xGf0BL_-HbwZpWqUpYmBpLUAFNafZRsh/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (565M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>depth</strong>:   <a href="https://drive.google.com/file/d/1N502LSOSuHXT62dnrHDgTdVtiPTUYyCg/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (140M)</a>   |   <a href="https://drive.google.com/file/d/1vQmpQzP4v2olpTdQ75iiuTDixJ4db8L4/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (185M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>imu</strong>:   <a href="https://drive.google.com/file/d/13hq6pt0HmUILxjFNCT0NynaHUfATSKjR/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1M)</a>   |   <a href="https://drive.google.com/file/d/1Q1xqSSet39jjiheDdtG5ymD4IDA6IP8b/view?usp=sharing" target="_blank" rel="noopener noreferrer">txt (1M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>ground truth</strong>:   <a href="https://drive.google.com/file/d/19ga3SKhVyKMU9KTGPtOcIUK9ok8Ojz3Q/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1M)</a>   |   <a href="https://drive.google.com/file/d/13lMZCvs--4BuHbNOh5s0YFycDQRoHGCO/view?usp=sharing" target="_blank" rel="noopener noreferrer">txt (1M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>scene image</strong>:   <a href="/vector/assets/img/corner.jpg">jpg (2M)</a>
+</li>
+    </div>
+</div>
+
+<p><br></p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/robot_normal1.synced.left_event.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/robot_normal1.synced.left_event.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/robot_normal1.synced.left_event.gif-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/robot_normal1.synced.left_event.gif" title="robot_normal1.synced.left_event">
+
+  </picture>
+
+</figure>
+
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/robot_normal1.synced.left_camera.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/robot_normal1.synced.left_camera.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/robot_normal1.synced.left_camera.gif-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/robot_normal1.synced.left_camera.gif" title="robot_normal1.synced.left_camera">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<h5>robot-normal</h5>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>left event</strong>:   <a href="https://drive.google.com/file/d/1Cw89cBS81VeZPCso6mut7vm1wXzUcoIC/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (131M)</a>   |   <a href="https://drive.google.com/file/d/1JxgHecOU1U6QYhZUQuY6FLqash8S9S7C/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (95M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>right event</strong>:   <a href="https://drive.google.com/file/d/189VGUieX8ZDvuWFhmIl1zvcqdqL9WQl5/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (141M)</a>   |   <a href="https://drive.google.com/file/d/1M71N6SIksWTcZmDU9SKMzRwyKBGFk45v/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (102M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>left camera</strong>:   <a href="https://drive.google.com/file/d/1ARJwILfk35NK3i7eYd0BZU3hR0FNJVDc/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (555M)</a>   |   <a href="https://drive.google.com/file/d/191w537dT7TlhBajyZucNHwZ-oGqkaYjf/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (541M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>right camera</strong>:   <a href="https://drive.google.com/file/d/1p31yJmobGRWuTloJSlFAgj1bc2o8eCsn/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (542M)</a>   |   <a href="https://drive.google.com/file/d/12wXcWGWbrM30zlaU0MI5bTgXZT9OiE1D/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (531M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>depth</strong>:   <a href="https://drive.google.com/file/d/1-6PVBT1z-7GkvppG4mZKvX9ycCdKy3nW/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (118M)</a>   |   <a href="https://drive.google.com/file/d/1Jbx0jChUiwVXaz87DVeGBMnCUctT1QUz/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (155M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>imu</strong>:   <a href="https://drive.google.com/file/d/1Z7l_ogoGnramNr_67FAe3j9MJp2gel5k/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1M)</a>   |   <a href="https://drive.google.com/file/d/1vaUbPf-x46tRke45TWOmTZJHk_CijnRb/view?usp=sharing" target="_blank" rel="noopener noreferrer">txt (1M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>ground truth</strong>:   <a href="https://drive.google.com/file/d/1qYfTq_lL4KmhpXL9jsCuTkWirhqDPGWy/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1M)</a>   |   <a href="https://drive.google.com/file/d/166cEQo_D38DgoFgoueF99Bg4riQrwCXf/view?usp=sharing" target="_blank" rel="noopener noreferrer">txt (1M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>scene image</strong>:   <a href="/vector/assets/img/robot.jpg">jpg (2M)</a>
+</li>
+    </div>
+</div>
+
+<p><br></p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/robot_fast1.synced.left_event.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/robot_fast1.synced.left_event.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/robot_fast1.synced.left_event.gif-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/robot_fast1.synced.left_event.gif" title="robot_fast1.synced.left_event">
+
+  </picture>
+
+</figure>
+
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/robot_fast1.synced.left_camera.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/robot_fast1.synced.left_camera.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/robot_fast1.synced.left_camera.gif-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/robot_fast1.synced.left_camera.gif" title="robot_fast1.synced.left_camera">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<h5>robot-fast</h5>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>left event</strong>:   <a href="https://drive.google.com/file/d/1iqp79hUtv3Ls3lOq80jqWOV5oeoSKdf7/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (392M)</a>   |   <a href="https://drive.google.com/file/d/1U02dfAtgmsVba401QKTimo19JI23SFSR/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (244M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>right event</strong>:   <a href="https://drive.google.com/file/d/1Ikb6Ci_zBWVXpvXQBePmE3SS87vROMKa/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (409M)</a>   |   <a href="https://drive.google.com/file/d/1a582zuDjLPYGbCCvC3LxCcIfifhZCmY5/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (254M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>left camera</strong>:   <a href="https://drive.google.com/file/d/1GWBC-5_MjFjI0YhPImzeGQHMpg5ZMfBu/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (406M)</a>   |   <a href="https://drive.google.com/file/d/1T8JZB9_NkqUzuCrwWqPUS_u158cSFz_t/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (396M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>right camera</strong>:   <a href="https://drive.google.com/file/d/1JpIGAmbcvjKuzqFR_ae6Q7XQ2gHKFsu3/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (400M)</a>   |   <a href="https://drive.google.com/file/d/1myRRq_qTt6IctHQoU3L0GWwFfTjjDpi2/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (391M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>depth</strong>:   <a href="https://drive.google.com/file/d/1Fzj6AB76IiTiggpp5CDTJ3m9j4l8rYs5/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (90M)</a>   |   <a href="https://drive.google.com/file/d/1oak9uZrrr4JfSWjL9PlFhYAAT5mxm0TU/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (119M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>imu</strong>:   <a href="https://drive.google.com/file/d/1TmheEi4_Svdj5Ovubcfdk4p4fTReESDy/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1M)</a>   |   <a href="https://drive.google.com/file/d/1c_1ClASkjHFAcFVrCuZuoLZZf7TW5qXI/view?usp=sharing" target="_blank" rel="noopener noreferrer">txt (2M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>ground truth</strong>:   <a href="https://drive.google.com/file/d/1rjbiwlm5bhHo7eG9my15OIBUBYL4XnYy/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1M)</a>   |   <a href="https://drive.google.com/file/d/1Rfh-Hhm3RnUF3eMkEue2veyB0dqkMQzB/view?usp=sharing" target="_blank" rel="noopener noreferrer">txt (1M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>scene image</strong>:   <a href="/vector/assets/img/robot.jpg">jpg (2M)</a>
+</li>
+    </div>
+</div>
+
+<p><br></p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/desk_normal1.synced.left_event.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/desk_normal1.synced.left_event.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/desk_normal1.synced.left_event.gif-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/desk_normal1.synced.left_event.gif" title="desk_normal1.synced.left_event">
+
+  </picture>
+
+</figure>
+
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/desk_normal1.synced.left_camera.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/desk_normal1.synced.left_camera.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/desk_normal1.synced.left_camera.gif-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/desk_normal1.synced.left_camera.gif" title="desk_normal1.synced.left_camera">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<h5>desk-normal</h5>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>left event</strong>:   <a href="https://drive.google.com/file/d/1yFqXov4Uc5zbnYLkW59XvqPQeRl2bAp3/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (535M)</a>   |   <a href="https://drive.google.com/file/d/1Ttjfol3THt9x1iMgR23HyHk2HiYveDe2/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (366M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>right event</strong>:   <a href="https://drive.google.com/file/d/1S2WPA1rsxjwmMVizMM6TjLH_M9Fyuy_b/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (556M)</a>   |   <a href="https://drive.google.com/file/d/1rvq7sqa7MpTZfNYfUJcDzD4Rvh2XTeqg/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (387M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>left camera</strong>:   <a href="https://drive.google.com/file/d/1y6WI13VSN_ZYBiizWbZngfodwWhIz-tD/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1.27G)</a>   |   <a href="https://drive.google.com/file/d/12FgkEINi-kVfIlAvWt_Ge-bGu3jF20YE/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (1.22G)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>right camera</strong>:   <a href="https://drive.google.com/file/d/1I1ItvPRwvr7ILlNc68j_Y5m7zS8YTMdl/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1.22G)</a>   |   <a href="https://drive.google.com/file/d/1_mVC2SWCwvVlvKR8xIZe1KLmJK6XxKhe/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (1.18G)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>depth</strong>:   <a href="https://drive.google.com/file/d/1BLfaZj-ejMrta8ddZy_D9ArXuuQTrsZx/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (360M)</a>   |   <a href="https://drive.google.com/file/d/1mDvyvlW1DN-plIJ1mX3sPvGMn4tpnLd3/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (462M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>imu</strong>:   <a href="https://drive.google.com/file/d/16a04XNsvlX5LKfjONokZdJlPoF8O56Wd/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1M)</a>   |   <a href="https://drive.google.com/file/d/1zwxmN4S2WV909LQf3JlN489Ye7ncZ8NJ/view?usp=sharing" target="_blank" rel="noopener noreferrer">txt (2M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>ground truth</strong>:   <a href="https://drive.google.com/file/d/1oaXfL0H2njRS8KOhnNAJggelSYr7ZF7X/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1M)</a>   |   <a href="https://drive.google.com/file/d/1wcMMJ4SzTAKpIDpGxZdOc0xHOca4ijmX/view?usp=sharing" target="_blank" rel="noopener noreferrer">txt (1M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>scene image</strong>:   <a href="/vector/assets/img/desk.jpg">jpg (2M)</a>
+</li>
+    </div>
+</div>
+
+<p><br></p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/desk_fast1.synced.left_event.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/desk_fast1.synced.left_event.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/desk_fast1.synced.left_event.gif-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/desk_fast1.synced.left_event.gif" title="desk_fast1.synced.left_event">
+
+  </picture>
+
+</figure>
+
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/desk_fast1.synced.left_camera.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/desk_fast1.synced.left_camera.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/desk_fast1.synced.left_camera.gif-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/desk_fast1.synced.left_camera.gif" title="desk_fast1.synced.left_camera">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<h5>desk-fast</h5>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>left event</strong>:   <a href="https://drive.google.com/file/d/1xe4tegfTal5G57EwRIHXXqw5ec68nhT0/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1.23G)</a>   |   <a href="https://drive.google.com/file/d/1SFuiB2P7iZiPmW8K_B2awJc154IcJgG4/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (725M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>right event</strong>:   <a href="https://drive.google.com/file/d/14NKQXbtqVeNUhovVnllgt5m3GdJvfaFL/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1.25G)</a>   |   <a href="https://drive.google.com/file/d/1Zi9ylEQD333K8ljvOHcMi_0XcMjgoO8a/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (735M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>left camera</strong>:   <a href="https://drive.google.com/file/d/1Vt1LEkLjzPPlAnZbEM0DiNMCnGap_rdA/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (583M)</a>   |   <a href="https://drive.google.com/file/d/1IN0jWJWSuT11X3NnOdYwQihBL9BBUhZg/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (577M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>right camera</strong>:   <a href="https://drive.google.com/file/d/1xkcGZWKVizfMwiPMEq2nuLuzSuJhn5Ou/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (574M)</a>   |   <a href="https://drive.google.com/file/d/1x-z2oqr3bbJCWFJMnLUqnSfkTxAZ0oD1/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (569M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>depth</strong>:   <a href="https://drive.google.com/file/d/1rjfqwc8bxn4P2OhZSd34Cjx9Lcbeag2N/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (159M)</a>   |   <a href="https://drive.google.com/file/d/1rcXTLUVNCF1yycATtvaHyoYKB7kPEEXz/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (207M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>imu</strong>:   <a href="https://drive.google.com/file/d/1PpXbJnP4rFXQdDbUXpK_DwxjUkG0z_ug/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1M)</a>   |   <a href="https://drive.google.com/file/d/1GMFlsAEy1An8f85hHQ4L6P3SBIYZQY3W/view?usp=sharing" target="_blank" rel="noopener noreferrer">txt (1M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>ground truth</strong>:   <a href="https://drive.google.com/file/d/1jnBTMj41wLDnQbFQp4TtXMUY2maEXLpK/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1M)</a>   |   <a href="https://drive.google.com/file/d/1abrBv_uOyUJnToeg6yd2aHhOIrQkQiKm/view?usp=sharing" target="_blank" rel="noopener noreferrer">txt (1M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>scene image</strong>:   <a href="/vector/assets/img/desk.jpg">jpg (2M)</a>
+</li>
+    </div>
+</div>
+
+<p><br></p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/sofa_normal1.synced.left_event.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/sofa_normal1.synced.left_event.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/sofa_normal1.synced.left_event.gif-1400.webp" />
+    -->
+
     <!-- Fallback to the original file -->
     <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/sofa_normal1.synced.left_event.gif" title="sofa_normal1.synced.left_event">
 
@@ -239,26 +803,14 @@
         <figure>
 
   <picture>
-    <source media="(max-width: 480px)" srcset="/vector/assets/gif/sofa_normal1.synced.left_camera.gif-480.webp"></source>
-    <source media="(max-width: 800px)" srcset="/vector/assets/gif/sofa_normal1.synced.left_camera.gif-800.webp"></source>
-    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/sofa_normal1.synced.left_camera.gif-1400.webp"></source>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/sofa_normal1.synced.left_camera.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/sofa_normal1.synced.left_camera.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/sofa_normal1.synced.left_camera.gif-1400.webp" />
+    -->
+
     <!-- Fallback to the original file -->
     <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/sofa_normal1.synced.left_camera.gif" title="sofa_normal1.synced.left_camera">
-
-  </picture>
-
-</figure>
-
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
-
-  <picture>
-    <source media="(max-width: 480px)" srcset="/vector/assets/img/sofa-480.webp"></source>
-    <source media="(max-width: 800px)" srcset="/vector/assets/img/sofa-800.webp"></source>
-    <source media="(max-width: 1400px)" srcset="/vector/assets/img/sofa-1400.webp"></source>
-    <!-- Fallback to the original file -->
-    <img class="img-fluid rounded z-depth-1" src="/vector/assets/img/sofa.jpg" title="sofa">
 
   </picture>
 
@@ -272,12 +824,12 @@
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         <li>
-<strong>left event</strong>:   <a href="https://drive.google.com/file/d/1AwQgZhbgq_Ke5lZ4eOcuMoWdqpTyhh-N/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (892M)</a>   |   <a href="https://drive.google.com/file/d/1E2LjCmjEHYHFTzUGsaZAHNQO0LD-csXs/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (563M)</a>
+<strong>left event</strong>:   <a href="https://drive.google.com/file/d/1AwQgZhbgq_Ke5lZ4eOcuMoWdqpTyhh-N/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (892M)</a>   |   <a href="https://drive.google.com/file/d/19DkMxic-DECcCKlYyCM5j49JjTJy-1se/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (573M)</a>
 </li>
     </div>
     <div class="col-sm mt-3 mt-md-0">
         <li>
-<strong>right event</strong>:   <a href="https://drive.google.com/file/d/18Unl3nr0v26VfHLzY09ycwKKKghS97Rr/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (979M)</a>   |   <a href="https://drive.google.com/file/d/1Okrov5Y_GyF2fp499o1TUQT4VYyEPZAp/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (612M)</a>
+<strong>right event</strong>:   <a href="https://drive.google.com/file/d/18Unl3nr0v26VfHLzY09ycwKKKghS97Rr/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (979M)</a>   |   <a href="https://drive.google.com/file/d/1E4O2UIndLIdwz1cimNsIuCCEY_4Kq75W/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (623M)</a>
 </li>
     </div>
 </div>
@@ -305,9 +857,18 @@
 </li>
     </div>
 </div>
-<li>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
 <strong>ground truth</strong>:   <a href="https://drive.google.com/file/d/1wUL_Hm5ulk5kvN6pYovz9kdikHHxLroC/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1M)</a>   |   <a href="https://drive.google.com/file/d/11w7MVRBK2aQfbubdlqJf3clD9cH_eAOA/view?usp=sharing" target="_blank" rel="noopener noreferrer">txt (1M)</a>
 </li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>scene image</strong>:   <a href="/vector/assets/img/sofa.jpg">jpg (2M)</a>
+</li>
+    </div>
+</div>
 
 <p><br></p>
 
@@ -316,9 +877,12 @@
         <figure>
 
   <picture>
-    <source media="(max-width: 480px)" srcset="/vector/assets/gif/sofa_fast1.synced.left_event.gif-480.webp"></source>
-    <source media="(max-width: 800px)" srcset="/vector/assets/gif/sofa_fast1.synced.left_event.gif-800.webp"></source>
-    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/sofa_fast1.synced.left_event.gif-1400.webp"></source>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/sofa_fast1.synced.left_event.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/sofa_fast1.synced.left_event.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/sofa_fast1.synced.left_event.gif-1400.webp" />
+    -->
+
     <!-- Fallback to the original file -->
     <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/sofa_fast1.synced.left_event.gif" title="sofa_fast1.synced.left_event">
 
@@ -331,26 +895,14 @@
         <figure>
 
   <picture>
-    <source media="(max-width: 480px)" srcset="/vector/assets/gif/sofa_fast1.synced.left_camera.gif-480.webp"></source>
-    <source media="(max-width: 800px)" srcset="/vector/assets/gif/sofa_fast1.synced.left_camera.gif-800.webp"></source>
-    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/sofa_fast1.synced.left_camera.gif-1400.webp"></source>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/sofa_fast1.synced.left_camera.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/sofa_fast1.synced.left_camera.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/sofa_fast1.synced.left_camera.gif-1400.webp" />
+    -->
+
     <!-- Fallback to the original file -->
     <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/sofa_fast1.synced.left_camera.gif" title="sofa_fast1.synced.left_camera">
-
-  </picture>
-
-</figure>
-
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
-
-  <picture>
-    <source media="(max-width: 480px)" srcset="/vector/assets/img/sofa-480.webp"></source>
-    <source media="(max-width: 800px)" srcset="/vector/assets/img/sofa-800.webp"></source>
-    <source media="(max-width: 1400px)" srcset="/vector/assets/img/sofa-1400.webp"></source>
-    <!-- Fallback to the original file -->
-    <img class="img-fluid rounded z-depth-1" src="/vector/assets/img/sofa.jpg" title="sofa">
 
   </picture>
 
@@ -364,12 +916,12 @@
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         <li>
-<strong>left event</strong>:   <a href="https://drive.google.com/file/d/1ZjoW6KoM8S0zjxCGgoO9M5EYG1SjO1Ow/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (689M)</a>   |   <a href="https://drive.google.com/file/d/1A2XeL3m77CYpRVORWlfgHTRk_DiSdFSO/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (396M)</a>
+<strong>left event</strong>:   <a href="https://drive.google.com/file/d/1ZjoW6KoM8S0zjxCGgoO9M5EYG1SjO1Ow/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (689M)</a>   |   <a href="https://drive.google.com/file/d/1dhfdxtOUGTRpmb8W5deQ7SKZ3fnDaSJ3/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (407M)</a>
 </li>
     </div>
     <div class="col-sm mt-3 mt-md-0">
         <li>
-<strong>right event</strong>:   <a href="https://drive.google.com/file/d/1u8oLau4LqOvwIoUgM-ETsPrPqnSS-QKK/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (740M)</a>   |   <a href="https://drive.google.com/file/d/14gV_laXdupwbI39RNUd7JyY8DEK_J9z0/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (423M)</a>
+<strong>right event</strong>:   <a href="https://drive.google.com/file/d/1u8oLau4LqOvwIoUgM-ETsPrPqnSS-QKK/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (740M)</a>   |   <a href="https://drive.google.com/file/d/1pTPvt4WLOsAvtZ82wAOzx3DCF-9CHtmp/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (436M)</a>
 </li>
     </div>
 </div>
@@ -397,13 +949,386 @@
 </li>
     </div>
 </div>
-<li>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
 <strong>ground truth</strong>:   <a href="https://drive.google.com/file/d/1a-3VMahxEeQ_qL2lAGMQQGPMMhBXCPpN/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1M)</a>   |   <a href="https://drive.google.com/file/d/1cAlsNizyTbPs4b99w5Zdb2Slvkn0ai1P/view?usp=sharing" target="_blank" rel="noopener noreferrer">txt (1M)</a>
 </li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>scene image</strong>:   <a href="/vector/assets/img/sofa.jpg">jpg (2M)</a>
+</li>
+    </div>
+</div>
 
 <p><br></p>
 
-<h5><i>More small-scale data sequences will be released in due time.</i></h5>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/mountain_normal1.synced.left_event.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/mountain_normal1.synced.left_event.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/mountain_normal1.synced.left_event.gif-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/mountain_normal1.synced.left_event.gif" title="mountain_normal1.synced.left_event">
+
+  </picture>
+
+</figure>
+
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/mountain_normal1.synced.left_camera.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/mountain_normal1.synced.left_camera.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/mountain_normal1.synced.left_camera.gif-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/mountain_normal1.synced.left_camera.gif" title="mountain_normal1.synced.left_camera">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<h5>mountain-normal</h5>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>left event</strong>:   <a href="https://drive.google.com/file/d/1VzyrJoKjtiphMgnlE-wWoMrx20U-IfVw/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1.13G)</a>   |   <a href="https://drive.google.com/file/d/19eri_foujxPJ7KtCriVlVa5glN9J60Oq/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (682M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>right event</strong>:   <a href="https://drive.google.com/file/d/1x7We2cWk9lx41BXoSOU8i0LXBulw4beh/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1.19G)</a>   |   <a href="https://drive.google.com/file/d/14ZCuRjTtuAqlCzQKXnE2wMemrC9a9vBF/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (718M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>left camera</strong>:   <a href="https://drive.google.com/file/d/1TU7hFBrWIVwmPSvh3790cLyA03jGHEAD/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (846M)</a>   |   <a href="https://drive.google.com/file/d/1Q-e_KmCa2-PSPf6bH23sVvoEEUjXxmEl/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (867M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>right camera</strong>:   <a href="https://drive.google.com/file/d/14Y0c_Ohw-KoDQtK1GqbDzWuAKISXtG9m/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (822M)</a>   |   <a href="https://drive.google.com/file/d/1DMCOnaB9D3bdFyAORI_6mdL_uMHG5HTC/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (858M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>depth</strong>:   <a href="https://drive.google.com/file/d/16GXbwIyl0la-ldK4XjfclNNazpIRg895/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (234M)</a>   |   <a href="https://drive.google.com/file/d/1zEV0OmBOOdPTX7ZMa3tWspJDGNbco7yL/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (295M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>imu</strong>:   <a href="https://drive.google.com/file/d/1yFmphpQbEPcPIRpLLKvYZL7oWOlzvQEG/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1M)</a>   |   <a href="https://drive.google.com/file/d/1E2n7ak79XYEvzOiFSOBa0C4YkWbJYvn0/view?usp=sharing" target="_blank" rel="noopener noreferrer">txt (1M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>ground truth</strong>:   <a href="https://drive.google.com/file/d/168G_paKQElJpG0ZHgyNdCttaKXIG54Zd/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1M)</a>   |   <a href="https://drive.google.com/file/d/1ppTaqzLZIbDhM-rf2SUSUPRRzfefcF8F/view?usp=sharing" target="_blank" rel="noopener noreferrer">txt (1M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>scene image</strong>:   <a href="/vector/assets/img/mountain.jpg">jpg (2M)</a>
+</li>
+    </div>
+</div>
+
+<p><br></p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/mountain_fast1.synced.left_event.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/mountain_fast1.synced.left_event.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/mountain_fast1.synced.left_event.gif-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/mountain_fast1.synced.left_event.gif" title="mountain_fast1.synced.left_event">
+
+  </picture>
+
+</figure>
+
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/mountain_fast1.synced.left_camera.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/mountain_fast1.synced.left_camera.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/mountain_fast1.synced.left_camera.gif-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/mountain_fast1.synced.left_camera.gif" title="mountain_fast1.synced.left_camera">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<h5>mountain-fast</h5>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>left event</strong>:   <a href="https://drive.google.com/file/d/1RVhQ9iAzvYDv3azUKgxt6yiYmwmMF_4d/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1.86G)</a>   |   <a href="https://drive.google.com/file/d/1McEz-U_ZRhmrSO8aAz6zRvjo_zSqnuPY/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (1.02G)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>right event</strong>:   <a href="https://drive.google.com/file/d/1gotHZdyKA6xMOPgxfXIH4svU_TswgJyH/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1.98G)</a>   |   <a href="https://drive.google.com/file/d/1Bzls_7wz9lJsrmykXTIKeujNhwP2mZrx/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (1.08G)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>left camera</strong>:   <a href="https://drive.google.com/file/d/1y7BK3_GxV8bWXio4CtOJGOlFB0RuJsL7/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (574M)</a>   |   <a href="https://drive.google.com/file/d/1oUJi-up-Ba1zW2xL9jIHZlHjwFdYvSuT/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (632M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>right camera</strong>:   <a href="https://drive.google.com/file/d/1ax97sANhl07eCh90CGg5afehkhKpXx98/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (568M)</a>   |   <a href="https://drive.google.com/file/d/1U-0VMjUfz5RfU5iDp0RwAoyVCPl1RiWl/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (588M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>depth</strong>:   <a href="https://drive.google.com/file/d/1d9Ov6yC1M47-18Fman-kSj8id5_uTJJj/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (146M)</a>   |   <a href="https://drive.google.com/file/d/18cQMFP9CUBFmf-x9Tq-6xi5LQ1B5d8n0/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (202M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>imu</strong>:   <a href="https://drive.google.com/file/d/13LWDmI31t8L1AjHriAfhLj6M1sGHkcO4/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1M)</a>   |   <a href="https://drive.google.com/file/d/1GYqbIQuFn6EmTcMK5iqdBMP1vfMUjQfM/view?usp=sharing" target="_blank" rel="noopener noreferrer">txt (1M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>ground truth</strong>:   <a href="https://drive.google.com/file/d/1NoqfmoukIYIfymZVu1-DU0fBtT_lqIMw/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1M)</a>   |   <a href="https://drive.google.com/file/d/1Ki31pFfrA0jdIIA4M5ocABVpQNd8F2I0/view?usp=sharing" target="_blank" rel="noopener noreferrer">txt (1M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>scene image</strong>:   <a href="/vector/assets/img/mountain.jpg">jpg (2M)</a>
+</li>
+    </div>
+</div>
+
+<p><br></p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/hdr_normal1.synced.left_event.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/hdr_normal1.synced.left_event.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/hdr_normal1.synced.left_event.gif-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/hdr_normal1.synced.left_event.gif" title="hdr_normal1.synced.left_event">
+
+  </picture>
+
+</figure>
+
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/hdr_normal1.synced.left_camera.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/hdr_normal1.synced.left_camera.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/hdr_normal1.synced.left_camera.gif-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/hdr_normal1.synced.left_camera.gif" title="hdr_normal1.synced.left_camera">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<h5>hdr-normal</h5>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>left event</strong>:   <a href="https://drive.google.com/file/d/1zW1KPJYElpTL6_N0iOBYSwNGdOHZM-sx/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (708M)</a>   |   <a href="https://drive.google.com/file/d/1L2d5-x0QSTUmG-B8UVl3oVHNWBZR56Hh/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (436M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>right event</strong>:   <a href="https://drive.google.com/file/d/1jLck9OWMZt9EJZX9AP6Cg7wzz3FSQYc_/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (732M)</a>   |   <a href="https://drive.google.com/file/d/1MeI9a0nkcyNZDich0ugefMcyQ2853Iwh/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (457M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>left camera</strong>:   <a href="https://drive.google.com/file/d/1La9LYmQ5m0aOLKqDXZ6tnR7v87ZlMBIG/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1.02G)</a>   |   <a href="https://drive.google.com/file/d/1da8aQ11cKnomG4MUgot-O_yBvhHdOFfj/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (1.00G)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>right camera</strong>:   <a href="https://drive.google.com/file/d/1TM-dGsu1LLQaVQhrdj5FX7t4XIMQRPco/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1.03G)</a>   |   <a href="https://drive.google.com/file/d/1ucv-jOUORN50svIQW3Rxr8dlByO2pZfG/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (1.01G)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>depth</strong>:   <a href="https://drive.google.com/file/d/12r8rBMYrDL5ZnfR5uYOL10in0EI8Zt8S/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (228M)</a>   |   <a href="https://drive.google.com/file/d/1ybDh37O3xPI-DBjUCVFY6Jbzje6bu0-N/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (284M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>imu</strong>:   <a href="https://drive.google.com/file/d/10xi2GWszY1ulNiC37ah2rNRf5mbIY6od/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1M)</a>   |   <a href="https://drive.google.com/file/d/1SB4lH7v3IpIX4sVACKbPtPMniPExdBcu/view?usp=sharing" target="_blank" rel="noopener noreferrer">txt (1M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>ground truth</strong>:   <a href="https://drive.google.com/file/d/1xG26COquNCB97lkBXPwAcYeLImEiBLgP/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1M)</a>   |   <a href="https://drive.google.com/file/d/1hXUBhOCX7JvkbKsqlvb4bkkeyzJIfZ96/view?usp=sharing" target="_blank" rel="noopener noreferrer">txt (1M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>scene image</strong>:   <a href="/vector/assets/img/hdr.jpg">jpg (2M)</a>
+</li>
+    </div>
+</div>
+
+<p><br></p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/hdr_fast1.synced.left_event.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/hdr_fast1.synced.left_event.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/hdr_fast1.synced.left_event.gif-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/hdr_fast1.synced.left_event.gif" title="hdr_fast1.synced.left_event">
+
+  </picture>
+
+</figure>
+
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/hdr_fast1.synced.left_camera.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/hdr_fast1.synced.left_camera.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/hdr_fast1.synced.left_camera.gif-1400.webp" />
+    -->
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/hdr_fast1.synced.left_camera.gif" title="hdr_fast1.synced.left_camera">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<h5>hdr-fast</h5>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>left event</strong>:   <a href="https://drive.google.com/file/d/1ugaLfaG9d8EHxYdW8awq6J8GYgbDFAoq/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1.50G)</a>   |   <a href="https://drive.google.com/file/d/1mTkwem7GNPv5OcO-mtrE_WMxDoU_WboC/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (855M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>right event</strong>:   <a href="https://drive.google.com/file/d/1HUNAainZI4HiMXzfjsJGY5tLhqPewC-4/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1.59G)</a>   |   <a href="https://drive.google.com/file/d/1Gv0udAzSg50-j_5pO1P5qdcoAZzzzcRr/view?usp=sharing" target="_blank" rel="noopener noreferrer">hdf5 (912M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>left camera</strong>:   <a href="https://drive.google.com/file/d/1QGvb2YHvXr2H1yByJpRZUt2kd-vOFzLf/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (779M)</a>   |   <a href="https://drive.google.com/file/d/1LPsychSjLde5qhAWqRsiPHbVCvYzRaG1/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (763M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>right camera</strong>:   <a href="https://drive.google.com/file/d/1xjseh-ABjWRLsCuBxUynVViP1szHD4sO/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (768M)</a>   |   <a href="https://drive.google.com/file/d/1iZa-ca7BntXyLGfOecQDkfm6g7BeLZmX/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (752M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>depth</strong>:   <a href="https://drive.google.com/file/d/1cnNQbMEWzplgjv2S5Z3-JMQmT5ZNUj-a/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (140M)</a>   |   <a href="https://drive.google.com/file/d/1CyEpxdWRJ_jSGpqVQZXy84BgsRj_KovC/view?usp=sharing" target="_blank" rel="noopener noreferrer">zip (190M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>imu</strong>:   <a href="https://drive.google.com/file/d/1J-erT9Cv4-9vcBtPigoo4T4943bhut0n/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1M)</a>   |   <a href="https://drive.google.com/file/d/197gJcz044OVkZcGa11ZLNpxNqVeZWfyf/view?usp=sharing" target="_blank" rel="noopener noreferrer">txt (1M)</a>
+</li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>ground truth</strong>:   <a href="https://drive.google.com/file/d/1EQ-C7moaFh8nFf9vtV0BpjrmCL6xRSpE/view?usp=sharing" target="_blank" rel="noopener noreferrer">rosbag (1M)</a>   |   <a href="https://drive.google.com/file/d/1kbdSxR2fVTOxeZ-b2GrRUQqreHF41fue/view?usp=sharing" target="_blank" rel="noopener noreferrer">txt (1M)</a>
+</li>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <li>
+<strong>scene image</strong>:   <a href="/vector/assets/img/hdr.jpg">jpg (2M)</a>
+</li>
+    </div>
+</div>
 
 <p><br></p>
 
@@ -416,9 +1341,12 @@
         <figure>
 
   <picture>
-    <source media="(max-width: 480px)" srcset="/vector/assets/gif/corridors_dolly1.synced.left_event.gif-480.webp"></source>
-    <source media="(max-width: 800px)" srcset="/vector/assets/gif/corridors_dolly1.synced.left_event.gif-800.webp"></source>
-    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/corridors_dolly1.synced.left_event.gif-1400.webp"></source>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/corridors_dolly1.synced.left_event.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/corridors_dolly1.synced.left_event.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/corridors_dolly1.synced.left_event.gif-1400.webp" />
+    -->
+
     <!-- Fallback to the original file -->
     <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/corridors_dolly1.synced.left_event.gif" title="corridors_dolly1.synced.left_event">
 
@@ -431,9 +1359,12 @@
         <figure>
 
   <picture>
-    <source media="(max-width: 480px)" srcset="/vector/assets/gif/corridors_dolly1.synced.left_camera.gif-480.webp"></source>
-    <source media="(max-width: 800px)" srcset="/vector/assets/gif/corridors_dolly1.synced.left_camera.gif-800.webp"></source>
-    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/corridors_dolly1.synced.left_camera.gif-1400.webp"></source>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/corridors_dolly1.synced.left_camera.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/corridors_dolly1.synced.left_camera.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/corridors_dolly1.synced.left_camera.gif-1400.webp" />
+    -->
+
     <!-- Fallback to the original file -->
     <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/corridors_dolly1.synced.left_camera.gif" title="corridors_dolly1.synced.left_camera">
 
@@ -493,9 +1424,12 @@
         <figure>
 
   <picture>
-    <source media="(max-width: 480px)" srcset="/vector/assets/gif/corridors_walk1.synced.left_event.gif-480.webp"></source>
-    <source media="(max-width: 800px)" srcset="/vector/assets/gif/corridors_walk1.synced.left_event.gif-800.webp"></source>
-    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/corridors_walk1.synced.left_event.gif-1400.webp"></source>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/corridors_walk1.synced.left_event.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/corridors_walk1.synced.left_event.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/corridors_walk1.synced.left_event.gif-1400.webp" />
+    -->
+
     <!-- Fallback to the original file -->
     <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/corridors_walk1.synced.left_event.gif" title="corridors_walk1.synced.left_event">
 
@@ -508,9 +1442,12 @@
         <figure>
 
   <picture>
-    <source media="(max-width: 480px)" srcset="/vector/assets/gif/corridors_walk1.synced.left_camera.gif-480.webp"></source>
-    <source media="(max-width: 800px)" srcset="/vector/assets/gif/corridors_walk1.synced.left_camera.gif-800.webp"></source>
-    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/corridors_walk1.synced.left_camera.gif-1400.webp"></source>
+  	<!-- Ensure image got properly displayed (issue #537) -->
+    <!-- <source media="(max-width: 480px)" srcset="/vector/assets/gif/corridors_walk1.synced.left_camera.gif-480.webp" />
+    <source media="(max-width: 800px)" srcset="/vector/assets/gif/corridors_walk1.synced.left_camera.gif-800.webp" />
+    <source media="(max-width: 1400px)" srcset="/vector/assets/gif/corridors_walk1.synced.left_camera.gif-1400.webp" />
+    -->
+
     <!-- Fallback to the original file -->
     <img class="img-fluid rounded z-depth-1" src="/vector/assets/gif/corridors_walk1.synced.left_camera.gif" title="corridors_walk1.synced.left_camera">
 
